@@ -430,6 +430,84 @@ st.markdown("""
             font-size: 2.35rem;
         }
     }
+        /* ===== ESPECIALIDADES EN OVALOS ===== */
+    .oval-grid-title {
+        text-align: center;
+        font-size: 2.4rem;
+        color: #0a2540;
+        font-weight: 900;
+        margin-bottom: 12px;
+    }
+
+    .oval-grid-desc {
+        text-align: center;
+        font-size: 1rem;
+        color: #6a778b;
+        max-width: 820px;
+        margin: 0 auto 38px auto;
+        line-height: 1.8;
+    }
+
+    .oval-wrap {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding-bottom: 30px;
+    }
+
+    div[data-testid="stExpander"] {
+        border: none !important;
+        box-shadow: none !important;
+        background: transparent !important;
+        margin-bottom: 14px !important;
+    }
+
+    div[data-testid="stExpander"] details {
+        border: none !important;
+        background: transparent !important;
+    }
+
+    div[data-testid="stExpander"] summary {
+        list-style: none !important;
+        border: 4px solid #111 !important;
+        border-radius: 999px !important;
+        background: white !important;
+        padding: 16px 24px !important;
+        text-align: center !important;
+        font-weight: 800 !important;
+        font-size: 1rem !important;
+        color: #0a2540 !important;
+        min-height: 70px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        transition: all 0.2s ease !important;
+        box-shadow: none !important;
+    }
+
+    div[data-testid="stExpander"] summary:hover {
+        transform: scale(1.02);
+        border-color: #0d6efd !important;
+        color: #0d6efd !important;
+    }
+
+    div[data-testid="stExpander"] .streamlit-expanderContent {
+        background: white !important;
+        border: 1px solid rgba(13,110,253,0.10) !important;
+        border-radius: 18px !important;
+        padding: 14px 16px 8px 16px !important;
+        margin-top: 10px !important;
+        box-shadow: 0 10px 24px rgba(19, 72, 128, 0.08);
+    }
+
+    .tema-item {
+        background: #f7fbff;
+        border-left: 4px solid #0d6efd;
+        padding: 12px 14px;
+        border-radius: 12px;
+        margin-bottom: 10px;
+        color: #29425b;
+        font-weight: 500;
+    }
 </style>
 """, unsafe_allow_html=True)
 
@@ -551,66 +629,126 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# ========= CURSOS =========
+# ========= ESPECIALIDADES =========
 st.markdown("""
 <div id="cursos" class="section" style="background: linear-gradient(180deg, #f7fbff 0%, #ffffff 100%);">
-    <div class="section-title">Cursos destacados</div>
-    <div class="section-desc">
-        Presiona cada curso para ver los temas de estudio.
+    <div class="oval-grid-title">Especialidades</div>
+    <div class="oval-grid-desc">
+        Selecciona una especialidad para ver sus temas de estudio.
     </div>
 </div>
 """, unsafe_allow_html=True)
 
-st.markdown('<div class="courses-wrapper">', unsafe_allow_html=True)
+with st.container():
+    col1, col2, col3 = st.columns(3, gap="large")
 
-with st.expander("Residencia Médica"):
-    st.markdown("""
-    <div class="tema-item">✅ Simulacros de examen</div>
-    <div class="tema-item">✅ Resolución de casos clínicos</div>
-    <div class="tema-item">✅ Farmacología y terapéutica</div>
-    <div class="tema-item">✅ Medicina interna</div>
-    <div class="tema-item">✅ Pediatría, cirugía y ginecología</div>
-    <div class="tema-item">✅ Estrategias para responder preguntas</div>
-    """, unsafe_allow_html=True)
+    with col1:
+        with st.expander("Cardiología"):
+            st.markdown("""
+            <div class="tema-item">Electrocardiograma</div>
+            <div class="tema-item">Insuficiencia cardíaca</div>
+            <div class="tema-item">Hipertensión arterial</div>
+            <div class="tema-item">Síndrome coronario agudo</div>
+            <div class="tema-item">Arritmias</div>
+            """, unsafe_allow_html=True)
 
-with st.expander("Ingreso a Medicina"):
-    st.markdown("""
-    <div class="tema-item">✅ Biología general</div>
-    <div class="tema-item">✅ Anatomía básica</div>
-    <div class="tema-item">✅ Química y bioquímica</div>
-    <div class="tema-item">✅ Razonamiento verbal</div>
-    <div class="tema-item">✅ Razonamiento lógico</div>
-    <div class="tema-item">✅ Técnicas de estudio y preparación</div>
-    """, unsafe_allow_html=True)
+        with st.expander("Pediatría"):
+            st.markdown("""
+            <div class="tema-item">Crecimiento y desarrollo</div>
+            <div class="tema-item">Vacunación</div>
+            <div class="tema-item">Enfermedades respiratorias</div>
+            <div class="tema-item">Nutrición infantil</div>
+            <div class="tema-item">Urgencias pediátricas</div>
+            """, unsafe_allow_html=True)
 
-with st.expander("Banco de Preguntas"):
-    st.markdown("""
-    <div class="tema-item">✅ Preguntas por especialidad</div>
-    <div class="tema-item">✅ Retroalimentación por respuesta</div>
-    <div class="tema-item">✅ Preguntas tipo examen</div>
-    <div class="tema-item">✅ Seguimiento de avance</div>
-    <div class="tema-item">✅ Práctica intensiva por módulos</div>
-    <div class="tema-item">✅ Evaluación de rendimiento</div>
-    """, unsafe_allow_html=True)
+        with st.expander("Neurología"):
+            st.markdown("""
+            <div class="tema-item">Exploración neurológica</div>
+            <div class="tema-item">Epilepsia</div>
+            <div class="tema-item">ACV</div>
+            <div class="tema-item">Trastornos del movimiento</div>
+            <div class="tema-item">Neuroanatomía clínica</div>
+            """, unsafe_allow_html=True)
 
-with st.expander("Curso de Anatomía"):
-    st.markdown("""
-    <div class="tema-item">✅ Sistema óseo</div>
-    <div class="tema-item">✅ Sistema muscular</div>
-    <div class="tema-item">✅ Sistema nervioso</div>
-    <div class="tema-item">✅ Aparato cardiovascular</div>
-    <div class="tema-item">✅ Aparato respiratorio</div>
-    <div class="tema-item">✅ Topografía anatómica</div>
-    """, unsafe_allow_html=True)
+        with st.expander("Dermatología"):
+            st.markdown("""
+            <div class="tema-item">Lesiones elementales</div>
+            <div class="tema-item">Dermatitis</div>
+            <div class="tema-item">Infecciones cutáneas</div>
+            <div class="tema-item">Acné y rosácea</div>
+            <div class="tema-item">Cáncer de piel</div>
+            """, unsafe_allow_html=True)
 
-with st.expander("Curso de Farmacología"):
-    st.markdown("""
-    <div class="tema-item">✅ Farmacocinética</div>
-    <div class="tema-item">✅ Farmacodinamia</div>
-    <div class="tema-item">✅ Antibióticos</div>
-    <div class="tema-item">✅ Analgésicos y antiinflamatorios</div>
-    <div class="tema-item">✅ Fármacos cardiovasculares</div>
-    <div class="tema-item">✅ Reacciones adversas e interacciones</div>
-    """, unsafe_allow_html=True)
+    with col2:
+        with st.expander("Cirugía General"):
+            st.markdown("""
+            <div class="tema-item">Abdomen agudo</div>
+            <div class="tema-item">Asepsia y antisepsia</div>
+            <div class="tema-item">Trauma</div>
+            <div class="tema-item">Manejo preoperatorio</div>
+            <div class="tema-item">Complicaciones postoperatorias</div>
+            """, unsafe_allow_html=True)
 
-st.markdown("</div>", unsafe_allow_html=True)
+        with st.expander("Ginecología"):
+            st.markdown("""
+            <div class="tema-item">Ciclo menstrual</div>
+            <div class="tema-item">Patología cervical</div>
+            <div class="tema-item">Planificación familiar</div>
+            <div class="tema-item">Infecciones ginecológicas</div>
+            <div class="tema-item">Oncología ginecológica</div>
+            """, unsafe_allow_html=True)
+
+        with st.expander("Endocrinología"):
+            st.markdown("""
+            <div class="tema-item">Diabetes mellitus</div>
+            <div class="tema-item">Tiroides</div>
+            <div class="tema-item">Obesidad</div>
+            <div class="tema-item">Trastornos suprarrenales</div>
+            <div class="tema-item">Hipófisis</div>
+            """, unsafe_allow_html=True)
+
+        with st.expander("Psiquiatría"):
+            st.markdown("""
+            <div class="tema-item">Trastornos de ansiedad</div>
+            <div class="tema-item">Depresión</div>
+            <div class="tema-item">Psicosis</div>
+            <div class="tema-item">Entrevista psiquiátrica</div>
+            <div class="tema-item">Urgencias psiquiátricas</div>
+            """, unsafe_allow_html=True)
+
+    with col3:
+        with st.expander("Medicina Interna"):
+            st.markdown("""
+            <div class="tema-item">Historia clínica</div>
+            <div class="tema-item">Enfermedades infecciosas</div>
+            <div class="tema-item">Patologías respiratorias</div>
+            <div class="tema-item">Patologías renales</div>
+            <div class="tema-item">Semiología médica</div>
+            """, unsafe_allow_html=True)
+
+        with st.expander("Traumatología"):
+            st.markdown("""
+            <div class="tema-item">Fracturas</div>
+            <div class="tema-item">Luxaciones</div>
+            <div class="tema-item">Lesiones deportivas</div>
+            <div class="tema-item">Inmovilización</div>
+            <div class="tema-item">Trauma osteomuscular</div>
+            """, unsafe_allow_html=True)
+
+        with st.expander("Obstetricia"):
+            st.markdown("""
+            <div class="tema-item">Control prenatal</div>
+            <div class="tema-item">Trabajo de parto</div>
+            <div class="tema-item">Preeclampsia</div>
+            <div class="tema-item">Hemorragias del embarazo</div>
+            <div class="tema-item">Emergencias obstétricas</div>
+            """, unsafe_allow_html=True)
+
+        with st.expander("Oncología"):
+            st.markdown("""
+            <div class="tema-item">Biología del cáncer</div>
+            <div class="tema-item">Tamizaje</div>
+            <div class="tema-item">Quimioterapia</div>
+            <div class="tema-item">Tumores frecuentes</div>
+            <div class="tema-item">Cuidados paliativos</div>
+            """, unsafe_allow_html=True)
