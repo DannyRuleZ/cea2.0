@@ -508,8 +508,80 @@ st.markdown("""
         color: #29425b;
         font-weight: 500;
     }
+
+        /* ===== ESTADOS DE REPASO ===== */
+    .status-box {
+        max-width: 1200px;
+        margin: 18px auto 0 auto;
+        background: white;
+        border-radius: 24px;
+        padding: 28px;
+        box-shadow: 0 14px 34px rgba(19, 72, 128, 0.08);
+        border: 1px solid rgba(15, 76, 129, 0.08);
+    }
+
+    .status-title {
+        font-size: 1.45rem;
+        font-weight: 900;
+        color: #0a2540;
+        margin-bottom: 18px;
+    }
+
+    .status-subtitle {
+        color: #66778c;
+        margin-bottom: 18px;
+        line-height: 1.7;
+    }
+
+    .status-chip {
+        display: inline-block;
+        padding: 8px 14px;
+        border-radius: 999px;
+        font-weight: 700;
+        margin: 4px 8px 8px 0;
+        font-size: 0.92rem;
+    }
+
+    .chip-good {
+        background: #dcfce7;
+        color: #166534;
+        border: 1px solid #86efac;
+    }
+
+    .chip-mid {
+        background: #fef3c7;
+        color: #92400e;
+        border: 1px solid #fcd34d;
+    }
+
+    .chip-bad {
+        background: #fee2e2;
+        color: #991b1b;
+        border: 1px solid #fca5a5;
+    }
+
+    .legend-wrap {
+        max-width: 1200px;
+        margin: 12px auto 30px auto;
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .legend-item {
+        background: white;
+        border-radius: 999px;
+        padding: 10px 16px;
+        border: 1px solid rgba(15, 76, 129, 0.08);
+        font-weight: 700;
+        color: #334b63;
+        box-shadow: 0 8px 18px rgba(19,72,128,0.05);
+    }
+    
 </style>
 """, unsafe_allow_html=True)
+
 
 # ========= NAVBAR =========
 st.markdown("""
