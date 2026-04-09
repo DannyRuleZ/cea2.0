@@ -556,55 +556,61 @@ st.markdown("""
 <div id="cursos" class="section" style="background: linear-gradient(180deg, #f7fbff 0%, #ffffff 100%);">
     <div class="section-title">Cursos destacados</div>
     <div class="section-desc">
-        Ejemplo de cómo mostrar la oferta académica con tarjetas limpias, etiquetas visuales,
-        descripciones cortas y llamadas a la acción.
-    </div>
-
-    <div class="cards-grid">
-        <div class="course-card">
-            <div class="course-tag">Curso VIP</div>
-            <h3>Residencia Médica</h3>
-            <p>
-                Preparación intensiva con simulaciones, material organizado y sesiones orientadas
-                a reforzar conceptos clave para exámenes de alto nivel.
-            </p>
-            <div class="course-meta">Modalidad: Online + Recursos descargables</div>
-        </div>
-
-        <div class="course-card">
-            <div class="course-tag">Preparación</div>
-            <h3>Ingreso a Medicina</h3>
-            <p>
-                Programa dirigido a estudiantes que buscan una formación sólida en las áreas
-                más importantes para su admisión a la carrera.
-            </p>
-            <div class="course-meta">Modalidad: Clases guiadas + Evaluaciones</div>
-        </div>
-
-        <div class="course-card">
-            <div class="course-tag">Especial</div>
-            <h3>Banco de Preguntas</h3>
-            <p>
-                Sección pensada para práctica intensiva, seguimiento de avance y resolución
-                de preguntas con una interfaz moderna y clara.
-            </p>
-            <div class="course-meta">Modalidad: Práctica continua</div>
-        </div>
+        Presiona cada curso para ver los temas de estudio.
     </div>
 </div>
 """, unsafe_allow_html=True)
 
-# ========= CTA =========
-st.markdown("""
-<div id="contacto" class="cta-box">
-    <h2>La residencia ya no sera un sueño</h2>
-    <p>
-        Mas info abajo!
-    </p>
-    <a href="#" class="btn-secondary" style="background:white; color:#0d6efd;">Solicitar información</a>
-</div>
+st.markdown('<div class="courses-wrapper">', unsafe_allow_html=True)
 
-<div class="footer">
-    © 2026 - Demo inspirada en una plataforma educativa médica.
-</div>
-""", unsafe_allow_html=True)
+with st.expander("Residencia Médica"):
+    st.markdown("""
+    <div class="tema-item">✅ Simulacros de examen</div>
+    <div class="tema-item">✅ Resolución de casos clínicos</div>
+    <div class="tema-item">✅ Farmacología y terapéutica</div>
+    <div class="tema-item">✅ Medicina interna</div>
+    <div class="tema-item">✅ Pediatría, cirugía y ginecología</div>
+    <div class="tema-item">✅ Estrategias para responder preguntas</div>
+    """, unsafe_allow_html=True)
+
+with st.expander("Ingreso a Medicina"):
+    st.markdown("""
+    <div class="tema-item">✅ Biología general</div>
+    <div class="tema-item">✅ Anatomía básica</div>
+    <div class="tema-item">✅ Química y bioquímica</div>
+    <div class="tema-item">✅ Razonamiento verbal</div>
+    <div class="tema-item">✅ Razonamiento lógico</div>
+    <div class="tema-item">✅ Técnicas de estudio y preparación</div>
+    """, unsafe_allow_html=True)
+
+with st.expander("Banco de Preguntas"):
+    st.markdown("""
+    <div class="tema-item">✅ Preguntas por especialidad</div>
+    <div class="tema-item">✅ Retroalimentación por respuesta</div>
+    <div class="tema-item">✅ Preguntas tipo examen</div>
+    <div class="tema-item">✅ Seguimiento de avance</div>
+    <div class="tema-item">✅ Práctica intensiva por módulos</div>
+    <div class="tema-item">✅ Evaluación de rendimiento</div>
+    """, unsafe_allow_html=True)
+
+with st.expander("Curso de Anatomía"):
+    st.markdown("""
+    <div class="tema-item">✅ Sistema óseo</div>
+    <div class="tema-item">✅ Sistema muscular</div>
+    <div class="tema-item">✅ Sistema nervioso</div>
+    <div class="tema-item">✅ Aparato cardiovascular</div>
+    <div class="tema-item">✅ Aparato respiratorio</div>
+    <div class="tema-item">✅ Topografía anatómica</div>
+    """, unsafe_allow_html=True)
+
+with st.expander("Curso de Farmacología"):
+    st.markdown("""
+    <div class="tema-item">✅ Farmacocinética</div>
+    <div class="tema-item">✅ Farmacodinamia</div>
+    <div class="tema-item">✅ Antibióticos</div>
+    <div class="tema-item">✅ Analgésicos y antiinflamatorios</div>
+    <div class="tema-item">✅ Fármacos cardiovasculares</div>
+    <div class="tema-item">✅ Reacciones adversas e interacciones</div>
+    """, unsafe_allow_html=True)
+
+st.markdown("</div>", unsafe_allow_html=True)
