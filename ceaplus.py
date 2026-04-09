@@ -1,7 +1,7 @@
 import streamlit as st
 
 st.set_page_config(
-    page_title="CEA Medicina - Inicio",
+    page_title="CEA PLus Mejorado - Inicio",
     page_icon="🩺",
     layout="wide",
     initial_sidebar_state="collapsed"
@@ -478,8 +478,7 @@ st.markdown("""
                 <div class="hero-doctor-text">
                     <h3>Formación académica enfocada en resultados</h3>
                     <p>
-                        Diseño limpio, imagen profesional, bloques informativos y tarjetas
-                        para destacar cursos, beneficios y llamados a la acción.
+                        Imagen perrona de un doctor
                     </p>
                 </div>
             </div>
@@ -598,16 +597,14 @@ st.markdown("""
 # ========= CTA =========
 st.markdown("""
 <div id="contacto" class="cta-box">
-    <h2>Comienza con una landing profesional</h2>
+    <h2>La residencia ya no sera un sueño</h2>
     <p>
-        Ya tienes una primera base visual bastante cercana al estilo de la web de referencia.
-        El siguiente paso es personalizar textos, colores exactos, imágenes, botones reales
-        y luego integrar la lógica que necesites dentro de Streamlit.
+        Mas info abajo!
     </p>
     <a href="#" class="btn-secondary" style="background:white; color:#0d6efd;">Solicitar información</a>
 </div>
 
 <div class="footer">
-    © 2026 - Demo en Streamlit inspirada en una plataforma educativa médica.
+    © 2026 - Demo inspirada en una plataforma educativa médica.
 </div>
 """, unsafe_allow_html=True)
