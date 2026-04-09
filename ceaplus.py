@@ -578,7 +578,100 @@ st.markdown("""
         color: #334b63;
         box-shadow: 0 8px 18px rgba(19,72,128,0.05);
     }
-    
+        /* ===== ESTADO VISUAL DEMO ===== */
+    .estado-badge {
+        display: inline-block;
+        padding: 8px 14px;
+        border-radius: 999px;
+        font-weight: 800;
+        margin-bottom: 14px;
+        font-size: 0.92rem;
+    }
+
+    .estado-verde {
+        background: #dcfce7;
+        color: #166534;
+        border: 1px solid #86efac;
+    }
+
+    .estado-amarillo {
+        background: #fef3c7;
+        color: #92400e;
+        border: 1px solid #fcd34d;
+    }
+
+    .estado-rojo {
+        background: #fee2e2;
+        color: #991b1b;
+        border: 1px solid #fca5a5;
+    }
+
+    .resumen-demo {
+        max-width: 1200px;
+        margin: 25px auto 0 auto;
+        background: white;
+        border-radius: 24px;
+        padding: 28px;
+        box-shadow: 0 14px 34px rgba(19, 72, 128, 0.08);
+        border: 1px solid rgba(15, 76, 129, 0.08);
+    }
+
+    .resumen-demo h3 {
+        color: #0a2540;
+        margin-bottom: 12px;
+        font-size: 1.5rem;
+        font-weight: 900;
+    }
+
+    .resumen-demo p {
+        color: #66778c;
+        line-height: 1.7;
+        margin-bottom: 16px;
+    }
+
+    .grupo-titulo {
+        font-weight: 800;
+        color: #0a2540;
+        margin-top: 14px;
+        margin-bottom: 10px;
+    }
+
+    .chip-demo {
+        display: inline-block;
+        padding: 8px 14px;
+        border-radius: 999px;
+        font-weight: 700;
+        margin: 4px 8px 8px 0;
+        font-size: 0.92rem;
+    }
+
+    .chip-verde {
+        background: #dcfce7;
+        color: #166534;
+        border: 1px solid #86efac;
+    }
+
+    .chip-amarillo {
+        background: #fef3c7;
+        color: #92400e;
+        border: 1px solid #fcd34d;
+    }
+
+    .chip-rojo {
+        background: #fee2e2;
+        color: #991b1b;
+        border: 1px solid #fca5a5;
+    }
+
+    .nota-beta {
+        margin-top: 18px;
+        background: #eff6ff;
+        color: #1d4ed8;
+        border: 1px solid #bfdbfe;
+        padding: 14px 16px;
+        border-radius: 16px;
+        font-weight: 600;
+    }
 </style>
 """, unsafe_allow_html=True)
 
@@ -700,13 +793,29 @@ st.markdown("""
     </div>
 </div>
 """, unsafe_allow_html=True)
+# ========= ESTADOS DEMO PREDEFINIDOS =========
+estado_especialidades = {
+    "Cardiología": ("verde", "🟢 Vas muy bien con esta especialidad"),
+    "Pediatría": ("verde", "🟢 Buen nivel de retención y repaso"),
+    "Neurología": ("amarillo", "🟡 Conviene reforzar algunos temas"),
+    "Dermatología": ("amarillo", "🟡 Necesita una revisión moderada"),
 
+    "Cirugía General": ("amarillo", "🟡 Buen avance, pero requiere práctica"),
+    "Ginecología": ("verde", "🟢 Especialidad bien consolidada"),
+    "Endocrinología": ("rojo", "🔴 Prioridad alta de repaso"),
+    "Psiquiatría": ("rojo", "🔴 Te conviene retomarla pronto"),
+
+    "Medicina Interna": ("verde", "🟢 Muy buena base actual"),
+    "Traumatología": ("rojo", "🔴 Riesgo de olvido si no repasas"),
+    "Obstetricia": ("amarillo", "🟡 Mantener seguimiento de repaso"),
+    "Oncología": ("rojo", "🔴 Especialidad crítica para reforzar")
+}
 # ========= ESPECIALIDADES =========
 st.markdown("""
 <div id="cursos" class="section" style="background: linear-gradient(180deg, #f7fbff 0%, #ffffff 100%);">
     <div class="oval-grid-title">Especialidades</div>
     <div class="oval-grid-desc">
-        Selecciona una especialidad para ver sus temas de estudio.
+        Selecciona una especialidad para ver sus temas de estudio y su estado actual de repaso en esta demo.
     </div>
 </div>
 """, unsafe_allow_html=True)
@@ -716,6 +825,8 @@ with st.container():
 
     with col1:
         with st.expander("Cardiología"):
+            st.markdown('<div class="estado-badge estado-verde">🟢 Bien repasada</div>', unsafe_allow_html=True)
+            st.markdown("<p style='color:#166534; font-weight:700;'>Vas muy bien con esta especialidad.</p>", unsafe_allow_html=True)
             st.markdown("""
             <div class="tema-item">Electrocardiograma</div>
             <div class="tema-item">Insuficiencia cardíaca</div>
@@ -725,6 +836,8 @@ with st.container():
             """, unsafe_allow_html=True)
 
         with st.expander("Pediatría"):
+            st.markdown('<div class="estado-badge estado-verde">🟢 Bien repasada</div>', unsafe_allow_html=True)
+            st.markdown("<p style='color:#166534; font-weight:700;'>Buen nivel de retención y repaso.</p>", unsafe_allow_html=True)
             st.markdown("""
             <div class="tema-item">Crecimiento y desarrollo</div>
             <div class="tema-item">Vacunación</div>
@@ -734,6 +847,8 @@ with st.container():
             """, unsafe_allow_html=True)
 
         with st.expander("Neurología"):
+            st.markdown('<div class="estado-badge estado-amarillo">🟡 Reforzar pronto</div>', unsafe_allow_html=True)
+            st.markdown("<p style='color:#92400e; font-weight:700;'>Conviene reforzar algunos temas.</p>", unsafe_allow_html=True)
             st.markdown("""
             <div class="tema-item">Exploración neurológica</div>
             <div class="tema-item">Epilepsia</div>
@@ -743,6 +858,8 @@ with st.container():
             """, unsafe_allow_html=True)
 
         with st.expander("Dermatología"):
+            st.markdown('<div class="estado-badge estado-amarillo">🟡 Reforzar pronto</div>', unsafe_allow_html=True)
+            st.markdown("<p style='color:#92400e; font-weight:700;'>Necesita una revisión moderada.</p>", unsafe_allow_html=True)
             st.markdown("""
             <div class="tema-item">Lesiones elementales</div>
             <div class="tema-item">Dermatitis</div>
@@ -753,6 +870,8 @@ with st.container():
 
     with col2:
         with st.expander("Cirugía General"):
+            st.markdown('<div class="estado-badge estado-amarillo">🟡 Reforzar pronto</div>', unsafe_allow_html=True)
+            st.markdown("<p style='color:#92400e; font-weight:700;'>Buen avance, pero requiere práctica.</p>", unsafe_allow_html=True)
             st.markdown("""
             <div class="tema-item">Abdomen agudo</div>
             <div class="tema-item">Asepsia y antisepsia</div>
@@ -762,6 +881,8 @@ with st.container():
             """, unsafe_allow_html=True)
 
         with st.expander("Ginecología"):
+            st.markdown('<div class="estado-badge estado-verde">🟢 Bien repasada</div>', unsafe_allow_html=True)
+            st.markdown("<p style='color:#166534; font-weight:700;'>Especialidad bien consolidada.</p>", unsafe_allow_html=True)
             st.markdown("""
             <div class="tema-item">Ciclo menstrual</div>
             <div class="tema-item">Patología cervical</div>
@@ -771,6 +892,8 @@ with st.container():
             """, unsafe_allow_html=True)
 
         with st.expander("Endocrinología"):
+            st.markdown('<div class="estado-badge estado-rojo">🔴 Repaso urgente</div>', unsafe_allow_html=True)
+            st.markdown("<p style='color:#991b1b; font-weight:700;'>Prioridad alta de repaso.</p>", unsafe_allow_html=True)
             st.markdown("""
             <div class="tema-item">Diabetes mellitus</div>
             <div class="tema-item">Tiroides</div>
@@ -780,6 +903,8 @@ with st.container():
             """, unsafe_allow_html=True)
 
         with st.expander("Psiquiatría"):
+            st.markdown('<div class="estado-badge estado-rojo">🔴 Repaso urgente</div>', unsafe_allow_html=True)
+            st.markdown("<p style='color:#991b1b; font-weight:700;'>Te conviene retomarla pronto.</p>", unsafe_allow_html=True)
             st.markdown("""
             <div class="tema-item">Trastornos de ansiedad</div>
             <div class="tema-item">Depresión</div>
@@ -790,6 +915,8 @@ with st.container():
 
     with col3:
         with st.expander("Medicina Interna"):
+            st.markdown('<div class="estado-badge estado-verde">🟢 Bien repasada</div>', unsafe_allow_html=True)
+            st.markdown("<p style='color:#166534; font-weight:700;'>Muy buena base actual.</p>", unsafe_allow_html=True)
             st.markdown("""
             <div class="tema-item">Historia clínica</div>
             <div class="tema-item">Enfermedades infecciosas</div>
@@ -799,6 +926,8 @@ with st.container():
             """, unsafe_allow_html=True)
 
         with st.expander("Traumatología"):
+            st.markdown('<div class="estado-badge estado-rojo">🔴 Repaso urgente</div>', unsafe_allow_html=True)
+            st.markdown("<p style='color:#991b1b; font-weight:700;'>Riesgo de olvido si no repasas.</p>", unsafe_allow_html=True)
             st.markdown("""
             <div class="tema-item">Fracturas</div>
             <div class="tema-item">Luxaciones</div>
@@ -808,6 +937,8 @@ with st.container():
             """, unsafe_allow_html=True)
 
         with st.expander("Obstetricia"):
+            st.markdown('<div class="estado-badge estado-amarillo">🟡 Reforzar pronto</div>', unsafe_allow_html=True)
+            st.markdown("<p style='color:#92400e; font-weight:700;'>Mantener seguimiento de repaso.</p>", unsafe_allow_html=True)
             st.markdown("""
             <div class="tema-item">Control prenatal</div>
             <div class="tema-item">Trabajo de parto</div>
@@ -817,6 +948,8 @@ with st.container():
             """, unsafe_allow_html=True)
 
         with st.expander("Oncología"):
+            st.markdown('<div class="estado-badge estado-rojo">🔴 Repaso urgente</div>', unsafe_allow_html=True)
+            st.markdown("<p style='color:#991b1b; font-weight:700;'>Especialidad crítica para reforzar.</p>", unsafe_allow_html=True)
             st.markdown("""
             <div class="tema-item">Biología del cáncer</div>
             <div class="tema-item">Tamizaje</div>
@@ -824,3 +957,35 @@ with st.container():
             <div class="tema-item">Tumores frecuentes</div>
             <div class="tema-item">Cuidados paliativos</div>
             """, unsafe_allow_html=True)
+
+st.markdown("""
+<div class="resumen-demo">
+    <h3>Resumen de repaso</h3>
+    <p>
+        Esta vista es una demostración visual para mostrar al usuario qué especialidades lleva bien,
+        cuáles debería reforzar pronto y cuáles conviene priorizar en su siguiente sesión de estudio.
+    </p>
+
+    <div class="grupo-titulo">Especialidades más consolidadas</div>
+    <span class="chip-demo chip-verde">Cardiología</span>
+    <span class="chip-demo chip-verde">Pediatría</span>
+    <span class="chip-demo chip-verde">Ginecología</span>
+    <span class="chip-demo chip-verde">Medicina Interna</span>
+
+    <div class="grupo-titulo">Especialidades a reforzar pronto</div>
+    <span class="chip-demo chip-amarillo">Neurología</span>
+    <span class="chip-demo chip-amarillo">Dermatología</span>
+    <span class="chip-demo chip-amarillo">Cirugía General</span>
+    <span class="chip-demo chip-amarillo">Obstetricia</span>
+
+    <div class="grupo-titulo">Especialidades prioritarias para repaso</div>
+    <span class="chip-demo chip-rojo">Endocrinología</span>
+    <span class="chip-demo chip-rojo">Psiquiatría</span>
+    <span class="chip-demo chip-rojo">Traumatología</span>
+    <span class="chip-demo chip-rojo">Oncología</span>
+
+    <div class="nota-beta">
+        Demo beta: en una versión futura, este estado cambiaría automáticamente según el tiempo transcurrido desde el último repaso del estudiante.
+    </div>
+</div>
+""", unsafe_allow_html=True)
